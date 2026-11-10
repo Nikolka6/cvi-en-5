@@ -21,6 +21,7 @@ def download_url_and_get_all_hrefs(url):
 
     if response.status_code != 200:
         raise Exception("Chyba při stahování stránky")
+        hrefs = re.findall(r'<a[^>]*href=["\']([^"\']+)["\']',)
 
     parser = HrefParser()
     parser.feed(response.text)
